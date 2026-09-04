@@ -13,17 +13,18 @@ class LoginForm extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 25),
 
-            const Text(
-              "Welcome Back!",
-              style: TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+           const Text(
+  "Welcome Back!",
+  textAlign: TextAlign.center,
+  style: TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.bold,
+  ),
+),
 
             const SizedBox(height: 5),
 

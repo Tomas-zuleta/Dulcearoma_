@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class BannerImage extends StatelessWidget {
@@ -5,16 +6,25 @@ class BannerImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 180,
       width: double.infinity,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(
-            "https://images.unsplash.com/photo-1603532648955-039310d9ed75",
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/images/login.jpg',
+            fit: BoxFit.cover,
           ),
-          fit: BoxFit.cover,
-        ),
+
+          // 🔥 DIFUMINADO
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+            child: Container(
+              color: Colors.black.withOpacity(0.1),
+            ),
+          ),
+        ],
       ),
     );
   }
